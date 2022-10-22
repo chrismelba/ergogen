@@ -54,6 +54,12 @@ module.exports = {
       (pad "" np_thru_hole circle (at 0 0 180) (size 6.25 6.25) (drill 6.25) (layers *.Cu *.Mask))`
       
 
+      `
+      ${''/* pins */}
+      (pad 1 thru_hole circle (at 0 6.05) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
+      (pad 2 thru_hole circle (at 4.13 3.3) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.to.str})
+      `
+
       function pins(def_neg, def_pos, def_side) {
 
           return `
@@ -74,8 +80,6 @@ module.exports = {
 
   return `
     ${ standard }
-    ${ p.param.keycaps ? keycap : '' }
-    ${ pins('-', '', 'B') })
     `
   }
 }
