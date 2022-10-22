@@ -50,8 +50,22 @@ module.exports = {
   (pad 1 thru_hole circle (at 0 6.05 180) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
   (pad 2 thru_hole circle (at 4.13 3.3 41.9) (size 2 2) (drill 1.2) (layers *.Cu *.Mask))
   (pad "" np_thru_hole circle (at 0 3.7 180) (size 2.3 2.3) (drill 2.3) (layers *.Cu *.Mask))
+  `
+  const keycap = `
+  ${'' /* keycap marks */}
+  (fp_line (start -9 -8.5) (end 9 -8.5) (layer Dwgs.User) (width 0.15))
+  (fp_line (start 9 -8.5) (end 9 8.5) (layer Dwgs.User) (width 0.15))
+  (fp_line (start 9 8.5) (end -9 8.5) (layer Dwgs.User) (width 0.15))
+  (fp_line (start -9 8.5) (end -9 -8.5) (layer Dwgs.User) (width 0.15))
+  `
 )
         `
     
+
+        return `
+        ${standard}
+        ${p.param.keycaps ? keycap : ''}
+        ${pins('-', '', 'B')})
+        `
   }
 }
