@@ -41,7 +41,7 @@ module.exports = {
       (fp_line (start -7.5 -7.5) (end 7.5 -7.5) (layer Eco2.User) (width 0.1524))
       (fp_line (start 7.5 -7.5) (end 7.5 7.5) (layer Eco2.User) (width 0.1524))
       ${''/* middle shaft */}
-      (pad "" np_thru_hole circle (at 0 0) (size 6.25 6.25) (drill 6.25) (layers *.Cu *.Mask))
+      (pad "" np_thru_hole circle (at 0 0) (size 5.05 5.05) (drill 5.05) (layers *.Cu *.Mask))
       `
     const keycap = `
       ${'' /* keycap marks */}
@@ -53,8 +53,8 @@ module.exports = {
     function pins(def_neg, def_pos, def_side) {
         return `
         ${''/* pins */}
-        (pad 1 thru_hole circle (at 2.6 5.75) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
-        (pad 2 thru_hole circle (at -4.4 4.7) (size 2 2) (drill 1.2) (layers *.Cu *.Mask) ${p.net.from.str})
+        (pad 1 thru_hole oval (at 2.6 -5.75) (size 2 2) (drill 1.27) (layers *.Cu *.Mask) ${p.net.from.str})
+        (pad 2 thru_hole oval (at -4.4 -4.7) (size 2 2) (drill 1.27) (layers *.Cu *.Mask) ${p.net.from.str})
       `
     }
     if(p.param.reverse) {
