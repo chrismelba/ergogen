@@ -19,6 +19,7 @@ module.exports = {
   },
   params: {
     class: 'S',
+    hotswap: false,
     reverse: false,
     keycaps: false
   },
